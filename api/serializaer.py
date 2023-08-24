@@ -1,7 +1,14 @@
 from rest_framework import serializers
-from .models import User
+from .models import Company
+from django.contrib.auth.models import User
 
-class UserSerializer(serializers.ModelSerializer):
+class CompanySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = ['name', 'email']
+
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ['url', 'username', 'email', 'is_staff']

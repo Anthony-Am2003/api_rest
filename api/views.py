@@ -1,9 +1,9 @@
 from rest_framework import viewsets
-from .serializaer import UserSerializer
-from .models import User
+from .serializaer import CompanySerializer
+from .models import Company
 
 # Create your views here.
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+class CompanyViews(viewsets.ModelViewSet):
+    queryset = Company.objects.all()
+    serializer_class = CompanySerializer
